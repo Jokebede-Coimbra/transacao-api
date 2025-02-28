@@ -1,6 +1,6 @@
 package com.jkbd.transacao_api.business.services;
 
-import com.jkbd.transacao_api.controller.dtos.TrasacaoRequestDTO;
+import com.jkbd.transacao_api.controller.dtos.TransacaoRequestDTO;
 import com.jkbd.transacao_api.infrastructure.exceptions.UnprocessableEntity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,9 +15,9 @@ import java.util.List;
 @Slf4j
 public class TransacaoService {
 
-    private final List<TrasacaoRequestDTO> listaTransacoes = new ArrayList<>();
+    private final List<TransacaoRequestDTO> listaTransacoes = new ArrayList<>();
 
-    public void adicionarTrasacoes(TrasacaoRequestDTO dto) {
+    public void adicionarTrasacoes(TransacaoRequestDTO dto) {
 
         log.info("Iniciado o procesamento de gravar transações");
 
@@ -37,7 +37,7 @@ public class TransacaoService {
         listaTransacoes.clear();
     }
 
-    public List<TrasacaoRequestDTO> buscarTransacoes(Integer intervaloBusca) {
+    public List<TransacaoRequestDTO> buscarTransacoes(Integer intervaloBusca) {
 
         OffsetDateTime dataHoraIntervalo = OffsetDateTime.now().minusSeconds(intervaloBusca);
 
