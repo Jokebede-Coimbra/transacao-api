@@ -29,7 +29,7 @@ public class TransacaoController {
             @ApiResponse(responseCode = "500", description = "Erro interno do servidor")
     })
     public ResponseEntity<Void> adicionarTransacao(@RequestBody TransacaoRequestDTO dto) {
-        transacaoService.adicionarTrasacoes(dto);
+        transacaoService.adicionarTransacoes(dto);
         return ResponseEntity.status(HttpStatus.CREATED).build();
 
     }
